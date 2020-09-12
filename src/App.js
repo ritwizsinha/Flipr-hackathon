@@ -1,8 +1,12 @@
 import React from 'react';
+import {Helpline, GovernmentNotifications, HospitalBeds, Cases} from './components';
 
 function App() {
   return (
-    <h1>Hello World</h1>
+    <Helpline />,
+    <GovernmentNotifications />,
+    <HospitalBeds />,
+    <Cases />
   );
 }
 
