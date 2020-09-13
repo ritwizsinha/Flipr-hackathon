@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import {apiEndpoints} from '../helpers/endpoints';
 
-export class HospitalBeds extends React.Component {
+export default class HospitalBeds extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

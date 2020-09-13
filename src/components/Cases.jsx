@@ -1,9 +1,12 @@
 import React from 'react';
 import axios from 'axios';
+import {Grid} from '@material-ui/core';
+
 
 import { apiEndpoints } from '../helpers/endpoints';
-
-export class Cases extends React.Component {
+import  Header  from './Header';
+import MiniDrawer from './MiniDrawer';
+export default class Cases extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -23,7 +26,11 @@ export class Cases extends React.Component {
     render() {
         console.log(this.state);
         return (
-            <h1>Hello from cases</h1>
-        )
+            <Grid container spacing={2}>
+                <Grid item container xs={12}>
+                    Some text asdfjaldsjfl
+                </Grid>
+            </Grid>
+        );
     }
 }

@@ -1,13 +1,17 @@
 import React from 'react';
-import {Helpline, GovernmentNotifications, HospitalBeds, Cases} from './components';
-
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Main  from './components/Main';
+import {BrowserRouter as Router} from 'react-router-dom';
 function App() {
   return (
-    <Helpline />,
-    <GovernmentNotifications />,
-    <HospitalBeds />,
-    <Cases />
+    <React.Fragment>
+      <CssBaseline />
+      <Router>
+        <Main />
+      </Router>
+    </React.Fragment>
   );
+
 }
 
 export default App;
