@@ -1,10 +1,8 @@
 import React, {useEffect, useState}from 'react';
-import axios from 'axios';
 import {Grid, Card, CardContent, Typography, } from '@material-ui/core';
 import { makeStyles} from '@material-ui/core/styles';
 import { Line } from 'react-chartjs-2';
 import CountUp from 'react-countup';
-import { apiEndpoints } from '../helpers/endpoints';
 import { getDeaths } from '../api/getDeaths';
 import {convertToMonthlyDeathObject } from '../helpers/convertData';
 import logo from '../images/logo.png';
@@ -15,6 +13,7 @@ const useStyles = makeStyles({
     image: {
         width: 370,
         marginTop: 50,
+        margin:"0 auto"
     }
   });
 export default function Cases() {
@@ -30,7 +29,7 @@ export default function Cases() {
         return (
             <Grid container spacing={2} direction="column">
                 <Grid item xs={12} justify="center"     >
-                    <image src={logo} className={classes.image}/>
+                    <img src={logo} className={classes.image}/>
                 </Grid>
                 <Grid item container spacing={2}>
                     <Grid item xs={0} sm={2} />

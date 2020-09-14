@@ -1,12 +1,12 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import { ListItem, ListItemIcon, ListItemText, Typography } from '@material-ui/core';
+import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
 import AssessmentIcon from '@material-ui/icons/Assessment';
 import HelpIcon from '@material-ui/icons/Help';
@@ -63,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MiniDrawer() {
   const classes = useStyles();
-  const theme = useTheme();
   const [toggle, setToggle] = React.useState(0);
 
   const handleDrawer = () => {
