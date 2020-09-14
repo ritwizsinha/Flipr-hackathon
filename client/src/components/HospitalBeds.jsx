@@ -183,7 +183,7 @@ export default function HospitalBeds() {
                                 }}    
                             >
                                 <option aria-label="None" value="all">All</option>
-                                {states.map((state) => (<option id={state}>{state}</option>))}
+                                {states.map((state,index) => (<option id={state} key={index}>{state}</option>))}
                             </NativeSelect>
                             <FormHelperText>Select a state </FormHelperText>
                         </FormControl>
@@ -200,14 +200,14 @@ export default function HospitalBeds() {
                                 }}    
                             >
                                 <option aria-label="None" value="all">All</option>
-                                {ownerships.map((ownership) => (<option id={ownership}>{ownership}</option>))}
+                                {ownerships.map((ownership, index) => (<option id={ownership} key={index}>{ownership}</option>))}
                             </NativeSelect>
                             <FormHelperText>Select an ownership </FormHelperText>
                         </FormControl>
                     </Grid>
                     <Grid item xs={1} />
                 </Grid>
-                <Grid item xs={12} alignItems="center">
+                <Grid item xs={12}>
                 <Paper>
                     <Typography variant="h3" align="center" className={classes.typographyPadding}>
                         State Hospitals
@@ -216,9 +216,9 @@ export default function HospitalBeds() {
                         <Table stickyHeader aria-label="sticky table">
                             <TableHead>
                                 <TableRow>
-                                    {hospitalColumns.map((column) => (
+                                    {hospitalColumns.map((column, index) => (
                                         <TableCell
-                                            key={column.id}
+                                            key={index}
                                             align="center"
                                             style={{ minWidth: column.minWidth }}
                                         >
@@ -228,10 +228,10 @@ export default function HospitalBeds() {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {hospitalBeds.slice(hospitalpage * hospitalrowsPerPage, hospitalpage * hospitalrowsPerPage + hospitalrowsPerPage).map((item) => {
+                                {hospitalBeds.slice(hospitalpage * hospitalrowsPerPage, hospitalpage * hospitalrowsPerPage + hospitalrowsPerPage).map((item,index) => {
                                     return (
                                         <TableRow hover role="checkbox" tabIndex={-1}>
-                                                {hospitalColumns.map((column) => {
+                                                {hospitalColumns.map((column,index2) => {
                                                     return (
                                                         <TableCell align="center">
                                                             {item[column.id]}   
@@ -256,7 +256,7 @@ export default function HospitalBeds() {
                     />
                 </Paper>
             </Grid>
-            <Grid item xs={12} alignItems="center">
+            <Grid item xs={12} >
                 <Paper>
                     <Typography variant="h3" align="center" className={classes.typographyPadding}>
                         Medical College Hospitals
@@ -265,9 +265,9 @@ export default function HospitalBeds() {
                         <Table stickyHeader aria-label="sticky table">
                             <TableHead>
                                 <TableRow>
-                                    {medicalCollegeColumns.map((column) => (
+                                    {medicalCollegeColumns.map((column,index) => (
                                         <TableCell
-                                            key={column.id}
+                                            key={index}
                                             align="center"
                                             style={{ minWidth: column.minWidth }}
                                         >

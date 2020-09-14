@@ -28,11 +28,11 @@ export default function Cases() {
     const convertedData = convertToMonthlyDeathObject(totalDeaths);
         return (
             <Grid container spacing={2} direction="column">
-                <Grid item xs={12} justify="center"     >
-                    <img src={logo} className={classes.image}/>
+                <Grid item xs={12}>
+                    <img src={logo} className={classes.image} alt="Covid-19"/>
                 </Grid>
                 <Grid item container spacing={2}>
-                    <Grid item xs={0} sm={2} />
+                    <Grid item  sm={2} />
                     <Grid item xs = {12} sm={8} component={Card}>
                         <CardContent className = {classes.center}>
                             <Typography color="textSecondary" gutterBottom>Deceased</Typography>
@@ -42,7 +42,7 @@ export default function Cases() {
                             <Typography color="textSecondary">Total number of deaths</Typography>
                         </CardContent>    
                     </Grid>
-                    <Grid item xs={0} sm={2} />
+                    <Grid item  sm={2} />
                 </Grid>
                 <Grid item xs={12}>
                     {

@@ -20,10 +20,9 @@ export default  function Helpline()  {
         axios.get(apiEndpoints.CONTACTS).then(res => {
             stateContactsChange(res.data.data.contacts.regional);
         });
-    });
+    },[]);
 
     const classes = useStyles();
-    console.log(stateContacts);
     const styledList = stateContacts.map(item => {
         return  (
         <Grid item container xs={12} sm={6} md={4}>

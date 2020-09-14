@@ -49,7 +49,6 @@ export default function GovernmentNotifications()  {
         }
         getNotificationList();
     },[]);
-    console.log(notificationList);
     const validNotificationList = notificationList.filter(({title, link}) => {
         const date = title.slice(0,title.indexOf(" "));
         return !isNaN(Date.parse(date)) && date.length > 5;
@@ -76,9 +75,9 @@ export default function GovernmentNotifications()  {
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
               <TableRow>
-                {columns.map((column) => (
+                {columns.map((column,index) => (
                   <TableCell
-                    key={column.id}
+                    key={index}
                     align="center"
                     style={{ minWidth: column.minWidth }}
                   >
@@ -88,13 +87,13 @@ export default function GovernmentNotifications()  {
               </TableRow>
             </TableHead>
             <TableBody>
-              {validNotificationList.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(({id, link, title, date}) => {
+              {validNotificationList.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(({id, link, title, date}, index) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1}  component="a" href={link} target="_blank">
-                        <TableCell  align="center">
+                  <TableRow hover role="checkbox" tabIndex={-1}  key={index}>
+                        <TableCell  align="center" key={index+1} component="a" href={link} target="_blank">
                           {date}
                         </TableCell>
-                        <TableCell  align="center">
+                        <TableCell  align="center"key={(index+1)*1000} component="a" href={link} target="_blank">
                           {title}
                         </TableCell>
                   </TableRow>
