@@ -11,7 +11,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import AssessmentIcon from '@material-ui/icons/Assessment';
 import HelpIcon from '@material-ui/icons/Help';
 import LocalHotelIcon from '@material-ui/icons/LocalHotel';
-
+import {Link} from 'react-router-dom';
 const drawerWidth = 200;
 
 const useStyles = makeStyles((theme) => ({
@@ -89,30 +89,38 @@ export default function MiniDrawer() {
           </IconButton>
         </div>
         <List component="nav"  aria-label="home reports helpline bedcount">
+        <Link to="/">
           <ListItem button>
             <ListItemIcon>
               <HomeIcon color="secondary" fontSize='large' />
             </ListItemIcon>
             <ListItemText primary="Home" />
           </ListItem>
+          </Link>
+          <Link to={"/reports"}>
           <ListItem button>
             <ListItemIcon>
-              <AssessmentIcon color="secondary" fontSize='large' />
+              <AssessmentIcon color="secondary" fontSize='large'/>
             </ListItemIcon>
             <ListItemText primary="Reports" />
           </ListItem>
+          </Link>
+          <Link to={"helpline"}>
           <ListItem button>
             <ListItemIcon>
-              <HelpIcon color="secondary" fontSize='large' />
+              <HelpIcon color="secondary" fontSize='large'to="helpline" />
             </ListItemIcon>
             <ListItemText primary="Helpline" />
           </ListItem>
+          </Link>
+          <Link to={"bedcount"}>
           <ListItem button>
             <ListItemIcon>
-              <LocalHotelIcon color="secondary" fontSize='large' />
+              <LocalHotelIcon color="secondary" fontSize='large' to=""/>
             </ListItemIcon>
             <ListItemText primary="Bedcount" />
           </ListItem>
+          </Link>
         </List>
       </Drawer>
   );

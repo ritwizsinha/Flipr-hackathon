@@ -37,7 +37,7 @@ export default function Main() {
                         <Helpline />
                       </Route>
                       <Route path="/">
-                        <Cases />
+                        <Cases /> 
                       </Route>
                     </Switch>
                 </div>
